@@ -2,7 +2,7 @@ package com.ctp.yhub.dao;
 
 import java.util.List;
 
-import com.ctp.yhub.model.UserDO;
+import com.ctp.yhub.entity.user.UserDO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

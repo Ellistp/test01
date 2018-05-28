@@ -1,4 +1,4 @@
-package com.ctp.yhub.web.controller;
+package com.ctp.yhub.web.controller.config;
 
 import com.ctp.yhub.common.exception.SpringBootException;
 import org.slf4j.Logger;

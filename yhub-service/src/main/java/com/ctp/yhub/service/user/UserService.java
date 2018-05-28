@@ -1,8 +1,9 @@
 package com.ctp.yhub.service.user;
 
+import com.ctp.yhub.entity.user.UserDO;
+
 import java.util.List;
 
-import com.ctp.yhub.model.UserDO;
 
 /**
  * Created by Administrator on 2018/5/26 0026.

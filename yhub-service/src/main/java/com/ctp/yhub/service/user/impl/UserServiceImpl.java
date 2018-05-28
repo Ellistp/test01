@@ -3,7 +3,7 @@ package com.ctp.yhub.service.user.impl;
 import java.util.List;
 
 import com.ctp.yhub.dao.UserDao;
-import com.ctp.yhub.model.UserDO;
+import com.ctp.yhub.entity.user.UserDO;
 import com.ctp.yhub.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
