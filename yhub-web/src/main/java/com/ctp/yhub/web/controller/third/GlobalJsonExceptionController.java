@@ -18,18 +18,6 @@ public class GlobalJsonExceptionController {
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalJsonExceptionController.class);
 
     /*
-     * 只针对使用requestbody 的controller 统一处理异常
-     */
-    //@ResponseBody
-    //@ExceptionHandler(value = Exception.class)
-    //public Map exception(Exception ex) throws Exception{
-    //    Map<String,Object> map = new HashMap<>();
-    //    map.put("code",100);
-    //    map.put("msg",ex.getMessage());
-    //    return map;
-    //}
-
-    /*
      * 只针对使用requestbody 的controller 统一处理异常 自定义异常
      */
     @ResponseBody
