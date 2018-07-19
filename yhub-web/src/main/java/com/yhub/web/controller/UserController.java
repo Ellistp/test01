@@ -29,7 +29,6 @@ public class UserController {
     @RequestMapping(value = "/getUser",method = RequestMethod.GET)
     public Result<String> getUser(){
         List<UserDO> userDOList = this.userDao.selectAll();
-        int size = CollectionUtils.isEmpty(userDOList) == true?0 : userDOList.size();
-        return Result.createSuccessResult(String.valueOf(size));
+        return Result.createSuccessResult(CollectionUtils.isEmpty(userDOList)? null : userDOList.get(0).toString());
     }
 }
