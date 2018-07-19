@@ -22,6 +22,7 @@
     <module>yhub-dao</module>
     <module>yhub-common</module>
     <module>yhub-entity</module>
+    <module>yhub-api</module>
   </modules>
 
   <name>yhub</name>
@@ -145,16 +146,11 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-redis</artifactId>
       </dependency>
-      <!--spring session 与redis应用基本环境配置,
-      需要开启redis后才可以使用，不然启动Spring boot会报错 -->
+
       <dependency>
-        <groupId>org.springframework.session</groupId>
-        <artifactId>spring-session-data-redis</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-log4j</artifactId>
-        <version>${log4j.version}</version>
+        <groupId>io.dubbo.springboot</groupId>
+        <artifactId>spring-boot-starter-dubbo</artifactId>
+        <version>1.0.0</version>
       </dependency>
   </dependencies>
 

@@ -1,4 +1,4 @@
-package com.yhub.service;
+package com.yhub.api;
 
 import java.util.List;
 
