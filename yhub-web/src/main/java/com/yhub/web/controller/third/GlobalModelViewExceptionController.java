@@ -12,8 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 @ControllerAdvice("com.yhub.web.controller")
 public class GlobalModelViewExceptionController {
 
-    /*
+    /**
      * 渲染页面返回给浏览器 统一处理异常
+     * @param ex
+     * @return
+     * @throws Exception
      */
     @ExceptionHandler(value = Exception.class)
     public ModelAndView myErrorHandler(Exception ex) throws Exception{

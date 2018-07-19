@@ -17,8 +17,10 @@ public class GlobalJsonExceptionController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalJsonExceptionController.class);
 
-    /*
+    /**
      * 只针对使用requestbody 的controller 统一处理异常 自定义异常
+     * @param ex
+     * @return
      */
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
