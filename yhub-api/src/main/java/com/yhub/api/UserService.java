@@ -1,32 +1,44 @@
 package com.yhub.api;
 
-import java.util.List;
-
 import com.yhub.entity.user.UserDO;
 
-
 /**
- * Created by Administrator on 2018/5/26 0026.
+ * Created by Administrator on 2018/5/12 0012.
  */
 public interface UserService {
 
     /**
-     * 根据id查找用户
+     * 添加记录
+     * @param userDO
+     * @return
+     */
+    int insert(UserDO userDO);
+
+    /**
+     * 更新记录
+     * @param userDO
+     * @return
+     */
+    int update(UserDO userDO);
+
+    /**
+     * 删除记录
      * @param id
      * @return
      */
-    UserDO selectByPrimaryKey(Long id);
+    int delete(Long id);
 
     /**
-     * 插入一条数据
-     * @param userDo
+     * 查询记录
+     * @param id
      * @return
      */
-    void insert(UserDO userDo);
+    UserDO selectById(Long id);
 
     /**
-     * 查找所有的用户
+     * 根据账户名和密码查询用户信息
+     * @param account
      * @return
      */
-    List<UserDO> selectAll();
+    UserDO selectByAccount(String account);
 }

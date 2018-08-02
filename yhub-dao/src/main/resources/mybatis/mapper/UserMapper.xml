@@ -1,30 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yhub.dao.UserDao">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yhub.dao.UserDao" >
+
     <resultMap id="BaseUserResultMap" type="com.yhub.entity.user.UserDO" >
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP"/>
         <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP"/>
-        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="account" property="account" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="salt" property="salt" jdbcType="VARCHAR"/>
+        <result column="nick_name" property="nickName" jdbcType="VARCHAR"/>
+        <result column="state" property="state" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="cols" >
         id,
         gmt_create,
         gmt_modified,
-        name
+        account,
+        password,
+        salt,
+        nick_name,
+        state
     </sql>
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.yhub.entity.user.UserDO" >
         insert into acc_user (
         gmt_create,
         gmt_modified,
-        name
+        account,
+        password,
+        salt,
+        nick_name,
+        state
         )
         values (
         now(),
         now(),
-        #{name}
+        #{account},
+        #{password},
+        #{salt},
+        #{nickName},
+        #{state}
         )
     </insert>
 
@@ -33,11 +51,23 @@
         where id = #{id}
     </delete>
 
-    <select id="selectByPrimaryKey" resultMap="BaseUserResultMap" parameterType="java.lang.Long">
-        SELECT <include refid="cols"/> FROM acc_user WHERE id = #{id}
+    <update id="update" parameterType="com.yhub.entity.user.UserDO" >
+        UPDATE acc_user
+        SET gmt_modified = now()
+        WHERE id = #{id}
+    </update>
+
+    <select id="selectById" resultMap="BaseUserResultMap" parameterType="java.lang.Long" >
+        select
+        <include refid="cols" />
+        from acc_user
+        where id = #{id}
     </select>
 
-    <select id="selectAll" resultMap="BaseUserResultMap">
-        SELECT <include refid="cols"/> FROM acc_user
+    <select id="selectByAccount" resultMap="BaseUserResultMap" parameterType="java.lang.String">
+        select
+        <include refid="cols" />
+        from acc_user
+        where account = #{account}
     </select>
 </mapper>

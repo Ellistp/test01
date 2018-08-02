@@ -1,33 +1,46 @@
 package com.yhub.dao;
 
-import java.util.List;
-
 import com.yhub.entity.user.UserDO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * Created by Administrator on 2018/5/26 0026.
+ * Created by Administrator on 2018/5/12 0012.
  */
 @Mapper
 public interface UserDao {
 
     /**
-     * 根据id查找用户信息
-     * @param id
-     * @return
-     */
-    UserDO selectByPrimaryKey(Long id);
-
-    /**
-     * 插入一条数据
+     * 添加记录
      * @param userDO
      * @return
      */
-    void insert(UserDO userDO);
+    int insert(UserDO userDO);
 
     /**
-     * 查找所有的用户
+     * 更新记录
+     * @param userDO
      * @return
      */
-    List<UserDO> selectAll();
+    int update(UserDO userDO);
+
+    /**
+     * 删除记录
+     * @param id
+     * @return
+     */
+    int delete(Long id);
+
+    /**
+     * 查询记录
+     * @param id
+     * @return
+     */
+    UserDO selectById(Long id);
+
+    /**
+     * 根据账户名和密码查询用户信息
+     * @param account
+     * @return
+     */
+    UserDO selectByAccount(String account);
 }

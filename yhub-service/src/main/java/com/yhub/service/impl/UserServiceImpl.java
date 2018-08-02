@@ -1,7 +1,5 @@
 package com.yhub.service.impl;
 
-import java.util.List;
-
 import com.yhub.api.UserService;
 import com.yhub.dao.UserDao;
 import com.yhub.entity.user.UserDO;
@@ -9,26 +7,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by Administrator on 2018/5/26 0026.
+ * Created by Administrator on 2018/5/12 0012.
  */
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDao userDao;
+    UserDao userDao;
 
     @Override
-    public UserDO selectByPrimaryKey(Long id) {
-        return this.userDao.selectByPrimaryKey(id);
+    public int insert(UserDO userDO) {
+        return userDao.insert(userDO);
     }
 
     @Override
-    public void insert(UserDO userDo) {
-        this.userDao.insert(userDo);
+    public int update(UserDO userDO) {
+        return userDao.update(userDO);
     }
 
     @Override
-    public List<UserDO> selectAll() {
-        return this.userDao.selectAll();
+    public int delete(Long id) {
+        return userDao.delete(id);
+    }
+
+    @Override
+    public UserDO selectById(Long id) {
+        return userDao.selectById(id);
+    }
+
+    @Override
+    public UserDO selectByAccount(String account) {
+        return this.userDao.selectByAccount(account);
     }
 }

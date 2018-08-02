@@ -18,16 +18,29 @@ public class UserDO implements Serializable {
 
     private Date gmtModified;
 
-    private String name;
+    private String account;
+
+    private String password;
+
+    private String salt;
+
+    private String nickName;
+
+    private String state;
 
     public UserDO() {
     }
 
-    public UserDO(Long id, Date gmtCreate, Date gmtModified, String name) {
+    public UserDO(Long id, Date gmtCreate, Date gmtModified, String account, String password, String salt,
+                  String nickName, String state) {
         this.id = id;
         this.gmtCreate = gmtCreate;
         this.gmtModified = gmtModified;
-        this.name = name;
+        this.account = account;
+        this.password = password;
+        this.salt = salt;
+        this.nickName = nickName;
+        this.state = state;
     }
 
     public Long getId() {
@@ -54,12 +67,44 @@ public class UserDO implements Serializable {
         this.gmtModified = gmtModified;
     }
 
-    public String getName() {
-        return name;
+    public String getAccount() {
+        return account;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     @Override
@@ -83,7 +128,11 @@ public class UserDO implements Serializable {
             "id=" + id +
             ", gmtCreate=" + gmtCreate +
             ", gmtModified=" + gmtModified +
-            ", name='" + name + '\'' +
+            ", account='" + account + '\'' +
+            ", password='" + password + '\'' +
+            ", salt='" + salt + '\'' +
+            ", nickName='" + nickName + '\'' +
+            ", state='" + state + '\'' +
             '}';
     }
 }

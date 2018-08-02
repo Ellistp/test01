@@ -1,1 +1,0 @@
-这是一个spring boot mybatis dubbo activemq 整合的项目结构
