@@ -10,7 +10,7 @@
 <head>
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>404</title>
+    <title>403 未授权错误</title>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="js/jquery.js"></script>
 
@@ -33,12 +33,12 @@
     <span>位置：</span>
     <ul class="placeul">
         <li><a href="#">首页</a></li>
-        <li><a href="#">404错误</a></li>
+        <li><a href="#">403未授权错误</a></li>
     </ul>
 </div>
 
 <div class="error">
-    <h2>非常遗憾，您访问的页面不存在！</h2>
+    <h2>非常遗憾，您未被授权！</h2>
 </div>
 </body>
 </html>

@@ -31,7 +31,7 @@
 
     <div class="welinfo">
         <span><img src="images/sun.png" alt="天气"/></span>
-        <b>Admin早上好，欢迎使用信息管理系统</b>
+        <b>${SESSION_LOGIN_USER.nickName}，欢迎使用信息管理系统</b>
         <a href="#">帐号设置</a>
     </div>
 
