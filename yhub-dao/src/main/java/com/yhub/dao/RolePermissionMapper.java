@@ -1,6 +1,8 @@
 package com.yhub.dao;
 
-import com.yhub.entity.user.PermissionDO;
+import java.util.List;
+
+import com.yhub.entity.user.RolePermissionDO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -9,21 +11,21 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2018/7/25
  */
 @Mapper
-public interface PermissionDao {
+public interface RolePermissionMapper {
 
     /**
      * 添加记录
-     * @param permissionDO
+     * @param rolePermissionDO
      * @return
      */
-    int insert(PermissionDO permissionDO);
+    int insert(RolePermissionDO rolePermissionDO);
 
     /**
      * 更新记录
-     * @param permissionDO
+     * @param rolePermissionDO
      * @return
      */
-    int update(PermissionDO permissionDO);
+    int update(RolePermissionDO rolePermissionDO);
 
     /**
      * 删除记录
@@ -37,5 +39,7 @@ public interface PermissionDao {
      * @param id
      * @return
      */
-    PermissionDO selectById(Long id);
+    RolePermissionDO selectById(Long id);
+
+    List<RolePermissionDO> selectPermissionsByRoleId(Long roleId);
 }

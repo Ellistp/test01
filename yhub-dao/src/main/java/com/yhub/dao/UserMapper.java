@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
  * Created by Administrator on 2018/5/12 0012.
  */
 @Mapper
-public interface UserDao {
+public interface UserMapper {
 
     /**
      * 添加记录

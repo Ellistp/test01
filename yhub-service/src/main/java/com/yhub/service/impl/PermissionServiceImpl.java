@@ -1,22 +1,21 @@
 package com.yhub.service.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
-
 import com.yhub.api.PermissionService;
-import com.yhub.dao.PermissionDao;
+import com.yhub.dao.PermissionMapper;
 import com.yhub.entity.user.PermissionDO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @author chengtianping
  * @description
  * @date 2018/7/25
  */
-@Service(interfaceClass=PermissionService.class)
+@Service("permissionService")
 public class PermissionServiceImpl implements PermissionService {
 
     @Autowired
-    private PermissionDao permissionDao;
+    private PermissionMapper permissionDao;
 
     @Override
     public int insert(PermissionDO permissionDO) {

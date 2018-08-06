@@ -2,44 +2,43 @@ package com.yhub.service.impl;
 
 import java.util.List;
 
-import com.alibaba.dubbo.config.annotation.Service;
-
 import com.yhub.api.UserRoleService;
-import com.yhub.dao.UserRoleDao;
+import com.yhub.dao.UserRoleMapper;
 import com.yhub.entity.user.UserRoleDO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by Administrator on 2018/5/12 0012.
  */
-@Service(interfaceClass=UserRoleService.class)
+@Service("userRoleService")
 public class UserRoleServiceImpl implements UserRoleService {
 
     @Autowired
-    private UserRoleDao userRoleDao;
+    private UserRoleMapper userRoleMapper;
 
     @Override
     public int insert(UserRoleDO userRoleDO) {
-        return userRoleDao.insert(userRoleDO);
+        return userRoleMapper.insert(userRoleDO);
     }
 
     @Override
     public int update(UserRoleDO userRoleDO) {
-        return userRoleDao.update(userRoleDO);
+        return userRoleMapper.update(userRoleDO);
     }
 
     @Override
     public int delete(Long id) {
-        return userRoleDao.delete(id);
+        return userRoleMapper.delete(id);
     }
 
     @Override
     public UserRoleDO selectById(Long id) {
-        return userRoleDao.selectById(id);
+        return userRoleMapper.selectById(id);
     }
 
     @Override
     public List<UserRoleDO> selectRolesByUserId(Long userId) {
-        return userRoleDao.selectRolesByUserId(userId);
+        return userRoleMapper.selectRolesByUserId(userId);
     }
 }
