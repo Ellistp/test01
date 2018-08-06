@@ -2,18 +2,19 @@ package com.yhub.service.impl;
 
 import java.util.List;
 
+import com.alibaba.dubbo.config.annotation.Service;
+
 import com.yhub.api.RolePermissionService;
 import com.yhub.dao.RolePermissionDao;
 import com.yhub.entity.user.RolePermissionDO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * @author chengtianping
  * @description
  * @date 2018/7/25
  */
-@Service
+@Service(interfaceClass=RolePermissionService.class)
 public class RolePermissionServiceImpl implements RolePermissionService {
 
     @Autowired

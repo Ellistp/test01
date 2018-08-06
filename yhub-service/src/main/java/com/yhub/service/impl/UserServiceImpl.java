@@ -1,15 +1,16 @@
 package com.yhub.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
+
 import com.yhub.api.UserService;
 import com.yhub.dao.UserDao;
 import com.yhub.entity.user.UserDO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * Created by Administrator on 2018/5/12 0012.
  */
-@Service("userService")
+@Service(interfaceClass=UserService.class)
 public class UserServiceImpl implements UserService {
 
     @Autowired

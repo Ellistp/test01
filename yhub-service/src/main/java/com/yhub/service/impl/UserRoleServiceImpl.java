@@ -2,16 +2,17 @@ package com.yhub.service.impl;
 
 import java.util.List;
 
+import com.alibaba.dubbo.config.annotation.Service;
+
 import com.yhub.api.UserRoleService;
 import com.yhub.dao.UserRoleDao;
 import com.yhub.entity.user.UserRoleDO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * Created by Administrator on 2018/5/12 0012.
  */
-@Service("userRoleService")
+@Service(interfaceClass=UserRoleService.class)
 public class UserRoleServiceImpl implements UserRoleService {
 
     @Autowired

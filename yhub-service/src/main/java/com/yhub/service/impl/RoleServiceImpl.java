@@ -1,17 +1,18 @@
 package com.yhub.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
+
 import com.yhub.api.RoleService;
 import com.yhub.dao.RoleDao;
 import com.yhub.entity.user.RoleDO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * @author chengtianping
  * @description
  * @date 2018/7/25
  */
-@Service
+@Service(interfaceClass=RoleService.class)
 public class RoleServiceImpl implements RoleService {
 
     @Autowired
