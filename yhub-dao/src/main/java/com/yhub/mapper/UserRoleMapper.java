@@ -1,27 +1,29 @@
-package com.yhub.dao;
+package com.yhub.mapper;
 
-import com.yhub.entity.user.UserDO;
+import java.util.List;
+
+import com.yhub.entity.user.UserRoleDO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * Created by Administrator on 2018/5/12 0012.
  */
 @Mapper
-public interface UserMapper {
+public interface UserRoleMapper {
 
     /**
      * 添加记录
-     * @param userDO
+     * @param userRoleDO
      * @return
      */
-    int insert(UserDO userDO);
+    int insert(UserRoleDO userRoleDO);
 
     /**
      * 更新记录
-     * @param userDO
+     * @param userRoleDO
      * @return
      */
-    int update(UserDO userDO);
+    int update(UserRoleDO userRoleDO);
 
     /**
      * 删除记录
@@ -35,12 +37,8 @@ public interface UserMapper {
      * @param id
      * @return
      */
-    UserDO selectById(Long id);
+    UserRoleDO selectById(Long id);
 
-    /**
-     * 根据账户名和密码查询用户信息
-     * @param account
-     * @return
-     */
-    UserDO selectByAccount(String account);
+    List<UserRoleDO> selectRolesByUserId(Long userId);
+
 }

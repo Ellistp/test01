@@ -1,4 +1,4 @@
-package com.yhub.api;
+package com.yhub.service;
 
 import com.yhub.entity.user.UserDO;
 

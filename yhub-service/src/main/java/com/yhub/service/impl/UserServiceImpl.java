@@ -1,8 +1,8 @@
 package com.yhub.service.impl;
 
-import com.yhub.api.UserService;
-import com.yhub.dao.UserMapper;
+import com.yhub.mapper.UserMapper;
 import com.yhub.entity.user.UserDO;
+import com.yhub.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

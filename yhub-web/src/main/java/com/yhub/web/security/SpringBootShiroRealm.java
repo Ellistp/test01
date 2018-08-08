@@ -4,16 +4,16 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import com.yhub.api.PermissionService;
-import com.yhub.api.RolePermissionService;
-import com.yhub.api.RoleService;
-import com.yhub.api.UserRoleService;
-import com.yhub.api.UserService;
 import com.yhub.entity.user.PermissionDO;
 import com.yhub.entity.user.RoleDO;
 import com.yhub.entity.user.RolePermissionDO;
 import com.yhub.entity.user.UserDO;
 import com.yhub.entity.user.UserRoleDO;
+import com.yhub.service.PermissionService;
+import com.yhub.service.RolePermissionService;
+import com.yhub.service.RoleService;
+import com.yhub.service.UserRoleService;
+import com.yhub.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

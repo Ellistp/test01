@@ -1,17 +1,15 @@
-package com.yhub.dao;
+package com.yhub.service;
 
 import java.util.List;
 
 import com.yhub.entity.user.RolePermissionDO;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author chengtianping
  * @description
  * @date 2018/7/25
  */
-@Mapper
-public interface RolePermissionMapper {
+public interface RolePermissionService {
 
     /**
      * 添加记录
@@ -42,4 +40,5 @@ public interface RolePermissionMapper {
     RolePermissionDO selectById(Long id);
 
     List<RolePermissionDO> selectPermissionsByRoleId(Long roleId);
+
 }

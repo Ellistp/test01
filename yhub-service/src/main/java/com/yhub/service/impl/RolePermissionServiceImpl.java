@@ -2,9 +2,9 @@ package com.yhub.service.impl;
 
 import java.util.List;
 
-import com.yhub.api.RolePermissionService;
-import com.yhub.dao.RolePermissionMapper;
+import com.yhub.mapper.RolePermissionMapper;
 import com.yhub.entity.user.RolePermissionDO;
+import com.yhub.service.RolePermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

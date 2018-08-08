@@ -2,9 +2,9 @@ package com.yhub.service.impl;
 
 import java.util.List;
 
-import com.yhub.api.UserRoleService;
-import com.yhub.dao.UserRoleMapper;
+import com.yhub.mapper.UserRoleMapper;
 import com.yhub.entity.user.UserRoleDO;
+import com.yhub.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,15 +1,13 @@
-package com.yhub.dao;
+package com.yhub.service;
 
 import com.yhub.entity.user.PermissionDO;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author chengtianping
  * @description
  * @date 2018/7/25
  */
-@Mapper
-public interface PermissionMapper {
+public interface PermissionService {
 
     /**
      * 添加记录

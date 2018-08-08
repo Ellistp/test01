@@ -1,8 +1,8 @@
 package com.yhub.service.impl;
 
-import com.yhub.api.PermissionService;
-import com.yhub.dao.PermissionMapper;
+import com.yhub.mapper.PermissionMapper;
 import com.yhub.entity.user.PermissionDO;
+import com.yhub.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

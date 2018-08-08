@@ -1,27 +1,29 @@
-package com.yhub.api;
+package com.yhub.mapper;
 
-import com.yhub.entity.user.PermissionDO;
+import com.yhub.entity.user.RoleDO;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author chengtianping
  * @description
  * @date 2018/7/25
  */
-public interface PermissionService {
+@Mapper
+public interface RoleMapper {
 
     /**
      * 添加记录
-     * @param permissionDO
+     * @param roleDO
      * @return
      */
-    int insert(PermissionDO permissionDO);
+    int insert(RoleDO roleDO);
 
     /**
      * 更新记录
-     * @param permissionDO
+     * @param roleDO
      * @return
      */
-    int update(PermissionDO permissionDO);
+    int update(RoleDO roleDO);
 
     /**
      * 删除记录
@@ -35,5 +37,5 @@ public interface PermissionService {
      * @param id
      * @return
      */
-    PermissionDO selectById(Long id);
+    RoleDO selectById(Long id);
 }

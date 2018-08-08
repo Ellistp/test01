@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yhub.dao.RoleMapper" >
+<mapper namespace="com.yhub.mapper.RoleMapper" >
 
     <resultMap id="BaseRoleResultMap" type="com.yhub.entity.user.RoleDO" >
         <id column="id" property="id" jdbcType="BIGINT"/>

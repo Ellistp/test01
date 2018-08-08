@@ -6,11 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import com.yhub.api.UserService;
 import com.yhub.common.constant.Constant;
 import com.yhub.common.constant.PermissionSignConstant;
 import com.yhub.common.constant.RoleSignConstant;
 import com.yhub.entity.user.UserDO;
+import com.yhub.service.UserService;
 import com.yhub.web.model.LoginReqData;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
