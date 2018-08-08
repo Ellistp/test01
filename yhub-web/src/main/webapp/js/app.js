@@ -5,7 +5,7 @@ $(function () {
     })
 });
 
-login = function () {
+loginForm = function () {
     $.ajax({
         type: "POST",
         dataType: "json",

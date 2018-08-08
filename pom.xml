@@ -47,6 +47,7 @@
     <javax.validation.version>2.0.1.Final</javax.validation.version>
     <commons-fileupload.version>1.3.1</commons-fileupload.version>
     <fastjson.version>1.2.37</fastjson.version>
+    <springboot.version>1.5.7.RELEASE</springboot.version>
   </properties>
 
   <!-- 子类中不声明就不会引用 -->
@@ -160,34 +161,42 @@
           <artifactId>fastjson</artifactId>
           <version>${fastjson.version}</version>
         </dependency>
-
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter</artifactId>
-          <version>1.5.7.RELEASE</version>
-        </dependency>
-        <!--spring boot web应用基本环境配置 -->
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-web</artifactId>
-          <version>1.5.7.RELEASE</version>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-test</artifactId>
-          <version>1.5.7.RELEASE</version>
-          <scope>test</scope>
-        </dependency>
-
-        <!-- session - redis -->
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-data-redis</artifactId>
-          <version>1.5.7.RELEASE</version>
-        </dependency>
       </dependencies>
     <!-- 配置共有依赖 -->
   </dependencyManagement>
+
+  <!-- 定义子类直接继承的依赖包 -->
+  <dependencies>
+    <!--spring boot web应用基本环境配置 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${springboot.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>${springboot.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${springboot.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+        <version>${springboot.version}</version>
+    </dependency>
+
+    <!--热部署-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
