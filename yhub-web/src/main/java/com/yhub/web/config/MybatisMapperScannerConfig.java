@@ -5,6 +5,7 @@ import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author chengtianping
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @AutoConfigureAfter(MybatisConfig.class)
 @MapperScan("com.yhub.mapper")
+@EnableTransactionManagement
 public class MybatisMapperScannerConfig {
 
     @Bean
