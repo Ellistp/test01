@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 /**
  * @author chengtianping
- * @description
+ * @description 首页配置
  * @date 2018/8/8
  */
 @Configuration
