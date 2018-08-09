@@ -14,7 +14,7 @@ import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 
 /**
  * @author chengtianping
- * @description
+ * @description 定时器的配置 支持多线程
  * @date 2018/8/8
  */
 @Configuration
