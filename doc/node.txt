@@ -1,0 +1,2 @@
+https://blog.csdn.net/qq_14945847/article/details/79443162  springboot相关集成
+https://www.cnblogs.com/ericli-ericli/p/5902270.html  windows下安装rabbitmq
