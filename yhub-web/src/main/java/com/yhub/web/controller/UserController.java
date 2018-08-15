@@ -45,6 +45,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/loginPage",method = RequestMethod.GET)
+    @ApiOperation(value="登录页面",notes="登录页面跳转",httpMethod = "GET")
     public String loginPage(){
         return "login";
     }
@@ -63,7 +64,8 @@ public class UserController {
      * @throws IOException
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(@Valid LoginReqData loginReqData, BindingResult result, Model model, HttpServletRequest request) throws
+    @ApiOperation(value="登录系统",notes="登录系统操作",httpMethod = "POST")
+    public String login(@ApiParam(name="LoginReqData实体",value="json格式",required=true)@Valid LoginReqData loginReqData, BindingResult result, Model model, HttpServletRequest request) throws
         IOException {
         try {
             Subject subject = SecurityUtils.getSubject();
@@ -95,6 +97,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @ApiOperation(value="登出页面",notes="登出系统操作",httpMethod = "GET")
     public String logout(HttpSession session) {
         session.removeAttribute(Constant.SESSION_LOGIN_USER);
         // 登出操作
@@ -109,6 +112,7 @@ public class UserController {
     @RequestMapping(value = "/admin")
     @ResponseBody
     @RequiresRoles(value = RoleSignConstant.ADMIN)
+    @ApiOperation(value="admin权限",notes="admin权限判断",httpMethod = "GET")
     public String admin() {
         return "拥有admin角色,能访问";
     }
@@ -119,6 +123,7 @@ public class UserController {
     @RequestMapping(value = "/create")
     @ResponseBody
     @RequiresPermissions(value = PermissionSignConstant.USER_CREATE)
+    @ApiOperation(value="user_create权限",notes="user_create权限判断",httpMethod = "GET")
     public String create() {
         return "拥有user:create权限,能访问";
     }
