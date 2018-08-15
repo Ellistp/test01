@@ -12,6 +12,10 @@ import com.yhub.common.constant.RoleSignConstant;
 import com.yhub.entity.user.UserDO;
 import com.yhub.service.UserService;
 import com.yhub.web.model.LoginReqData;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -24,14 +28,18 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by Administrator on 2018/5/27 0027.
  */
+@Api(value="user controller",description="用户相关操作",tags={"用户操作接口"})
 @Controller
 @RequestMapping("/api/user")
 public class UserController {
+
+    private static final Logger logger = Logger.getLogger(UserController.class);
 
     @Autowired
     private UserService userService;
@@ -39,6 +47,14 @@ public class UserController {
     @RequestMapping(value = "/loginPage",method = RequestMethod.GET)
     public String loginPage(){
         return "login";
+    }
+
+    @RequestMapping(value = "/getUser",method = RequestMethod.GET)
+    @ResponseBody
+    @ApiOperation(value="用户获取",notes="获取用户信息",httpMethod = "GET")
+    public UserDO getUser(@ApiParam(required=true,value="用户ID",name="userId")@RequestParam(value="userId")Long userId) {
+        logger.info("根据ID获取用户信息");
+        return userService.selectById(userId);
     }
 
     /**
